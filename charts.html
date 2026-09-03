@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TradePulse | Advanced Charts</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-[#0b0e14] text-slate-200 font-sans antialiased h-screen flex flex-col">
+
+  <header class="border-b border-slate-800 bg-[#0f141f] shrink-0">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <span class="text-xl font-black tracking-wider text-white">TRADE<span class="text-emerald-400">PULSE</span></span>
+      </div>
+      <nav class="flex items-center gap-6 text-sm font-medium text-slate-400">
+        <a href="index.html" class="hover:text-emerald-400 transition">Home</a>
+        <a href="signals.html" class="hover:text-emerald-400 transition flex items-center gap-1.5"><i class="fa-solid fa-bolt text-xs"></i> Signals</a>
+        <a href="charts.html" class="text-emerald-400 transition">Charts</a>
+        <a href="news.html" class="hover:text-emerald-400 transition">Market News</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="flex-grow w-full max-w-7xl mx-auto p-4 sm:p-6 flex flex-col space-y-4">
+    <h1 class="text-2xl font-bold text-white shrink-0">Advanced Technical Charting</h1>
+    <p class="text-sm text-slate-400 shrink-0">Use the box in the top left of the chart to search for any NSE/BSE stock or Crypto.</p>
+    
+    <!-- Full Height Chart Container -->
+    <div class="flex-grow bg-[#111726] border border-slate-800 rounded-xl overflow-hidden min-h-[600px]">
+      <div class="tradingview-widget-container" style="height:100%;width:100%">
+        <div id="tradingview_chart" style="height:100%;width:100%"></div>
+        <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+        <script type="text/javascript">
+          new TradingView.widget({
+            "autosize": true,
+            "symbol": "BSE:SENSEX",
+            "interval": "D",
+            "timezone": "Asia/Kolkata",
+            "theme": "dark",
+            "style": "1",
+            "locale": "in",
+            "toolbar_bg": "#111726",
+            "enable_publishing": false,
+            "allow_symbol_change": true,
+            "container_id": "tradingview_chart"
+          });
+        </script>
+      </div>
+    </div>
+  </main>
+
+</body>
+</html>
