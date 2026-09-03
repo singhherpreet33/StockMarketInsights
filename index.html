@@ -4,53 +4,66 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="StockMarketInsights - Professional stock market analysis platform with real-time data, technical analysis, and investment strategies.">
-  <meta name="keywords" content="stock market, trading, NSE, BSE, crypto, technical analysis">
   <title>StockMarketInsights - Professional Trading Platform</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="assets/css/style.css">
 </head>
-<body class="bg-slate-950 text-slate-100">
+<body class="bg-slate-950 text-slate-100 font-sans antialiased">
 
-  <!-- Navigation -->
-<nav class="flex items-center gap-6 text-sm font-medium text-slate-400">
-        <a href="index.html" class="hover:text-emerald-400 transition">Home</a>
-        <a href="signals.html" class="hover:text-emerald-400 transition flex items-center gap-1.5"><i class="fa-solid fa-bolt text-xs text-amber-400"></i> Signals</a>
-        <a href="charts.html" class="hover:text-emerald-400 transition">Charts</a>
-        <a href="news.html" class="hover:text-emerald-400 transition">Market News</a>
-      </nav>
-        <!-- Logo -->
-        <div class="flex items-center gap-2">
-          <div class="h-8 w-8 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center">
-            <i class="fas fa-chart-line text-white font-bold text-lg"></i>
-          </div>
-          <span class="text-xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">StockMarket<span class="text-white">Insights</span></span>
-        </div>
-
-        <!-- Menu -->
-        <div class="hidden md:flex items-center gap-8">
-          <a href="#home" class="text-slate-300 hover:text-cyan-400 transition">Home</a>
-          <a href="pages/dashboard.html" class="text-slate-300 hover:text-cyan-400 transition">Dashboard</a>
-          <a href="pages/stocks.html" class="text-slate-300 hover:text-cyan-400 transition">Stocks</a>
-          <a href="pages/analysis.html" class="text-slate-300 hover:text-cyan-400 transition">Analysis</a>
-          <a href="pages/portfolio.html" class="text-slate-300 hover:text-cyan-400 transition">Portfolio</a>
-          <a href="pages/education.html" class="text-slate-300 hover:text-cyan-400 transition">Education</a>
-        </div>
-
-        <!-- CTA -->
-        <div class="flex items-center gap-4">
-          <a href="pages/login.html" class="text-slate-300 hover:text-white transition">Login</a>
-          <a href="pages/signup.html" class="px-4 py-2 bg-gradient-to-r from-blue-500 to-cyan-500 text-white rounded-lg hover:from-blue-600 hover:to-cyan-600 transition">Sign Up</a>
-          <button class="md:hidden text-slate-300">
-            <i class="fas fa-bars text-xl"></i>
-          </button>
-        </div>
-      </div>
+  <!-- Top Real-Time Market Ticker -->
+  <div class="w-full bg-[#0b0f19] border-b border-slate-800 h-11 overflow-hidden">
+    <div class="tradingview-widget-container">
+      <div class="tradingview-widget-container__widget"></div>
+      <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+      {
+        "symbols": [
+          { "proName": "BSE:SENSEX", "title": "SENSEX" },
+          { "proName": "NSE:NIFTY", "title": "NIFTY 50" },
+          { "proName": "BINANCE:BTCUSDT", "title": "BTC/USDT" },
+          { "proName": "NSE:RELIANCE", "title": "RELIANCE" },
+          { "proName": "NSE:HDFCBANK", "title": "HDFC BANK" }
+        ],
+        "showSymbolLogo": true,
+        "isTransparent": true,
+        "displayMode": "adaptive",
+        "colorTheme": "dark",
+        "locale": "in"
+      }
+      </script>
     </div>
-  </nav>
+  </div>
+
+  <!-- Corrected Header & Navigation -->
+  <header class="border-b border-slate-800 bg-slate-950/90 sticky top-0 z-40 backdrop-blur">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+      
+      <!-- Logo -->
+      <div class="flex items-center gap-2">
+        <div class="h-8 w-8 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center">
+          <i class="fas fa-chart-line text-white font-bold text-lg"></i>
+        </div>
+        <span class="text-xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">StockMarket<span class="text-white">Insights</span></span>
+      </div>
+
+      <!-- Page Links (Fixed to point to your new pages) -->
+      <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-slate-400">
+        <a href="index.html" class="text-cyan-400 transition">Home</a>
+        <a href="signals.html" class="hover:text-cyan-400 transition flex items-center gap-1.5"><i class="fa-solid fa-bolt text-xs text-amber-400"></i> Signals</a>
+        <a href="charts.html" class="hover:text-cyan-400 transition">Live Charts</a>
+        <a href="news.html" class="hover:text-cyan-400 transition">Market News</a>
+      </nav>
+
+      <!-- CTA Buttons -->
+      <div class="flex items-center gap-4">
+        <a href="#" class="hidden sm:block text-slate-300 hover:text-white transition text-sm">Login</a>
+        <a href="#" class="px-4 py-2 bg-gradient-to-r from-blue-500 to-cyan-500 text-white text-sm rounded-lg hover:from-blue-600 hover:to-cyan-600 transition">Sign Up</a>
+      </div>
+
+    </div>
+  </header>
 
   <!-- Hero Section -->
-  <section id="home" class="pt-32 pb-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-slate-950 via-blue-950/20 to-slate-950">
+  <section id="home" class="pt-20 pb-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-slate-950 via-blue-950/20 to-slate-950">
     <div class="max-w-7xl mx-auto">
       <div class="grid md:grid-cols-2 gap-12 items-center">
         <div class="space-y-6">
@@ -64,11 +77,11 @@
             Master the markets with real-time data, advanced technical analysis, and AI-powered insights. Trade smarter, not harder.
           </p>
           <div class="flex flex-col sm:flex-row gap-4">
-            <a href="pages/signup.html" class="px-8 py-3 bg-gradient-to-r from-blue-500 to-cyan-500 text-white rounded-lg hover:shadow-lg hover:shadow-blue-500/50 transition text-center font-semibold">
-              Start Trading Free
+            <a href="signals.html" class="px-8 py-3 bg-gradient-to-r from-blue-500 to-cyan-500 text-white rounded-lg hover:shadow-lg hover:shadow-blue-500/50 transition text-center font-semibold">
+              View Live Signals
             </a>
-            <a href="pages/education.html" class="px-8 py-3 border border-cyan-500 text-cyan-400 rounded-lg hover:bg-cyan-500/10 transition text-center font-semibold">
-              Learn More
+            <a href="charts.html" class="px-8 py-3 border border-cyan-500 text-cyan-400 rounded-lg hover:bg-cyan-500/10 transition text-center font-semibold">
+              Open Charts
             </a>
           </div>
           <div class="flex gap-8 text-sm">
@@ -78,42 +91,35 @@
             </div>
             <div>
               <div class="text-2xl font-bold text-cyan-400">24/7</div>
-              <div class="text-slate-400">Live Support</div>
-            </div>
-            <div>
-              <div class="text-2xl font-bold text-cyan-400">₹1L+</div>
-              <div class="text-slate-400">Avg Daily Volume</div>
+              <div class="text-slate-400">Live Updates</div>
             </div>
           </div>
         </div>
         
         <div class="relative">
           <div class="absolute inset-0 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-2xl blur-3xl opacity-20"></div>
-          <div class="relative bg-slate-900 border border-slate-800 rounded-2xl p-6 space-y-4">
+          <div class="relative bg-slate-900 border border-slate-800 rounded-2xl p-6 space-y-4 shadow-2xl">
             <div class="flex justify-between items-center">
-              <span class="text-sm font-semibold text-slate-400">NIFTY 50</span>
-              <span class="text-2xl font-bold text-green-400">24,850 <i class="fas fa-arrow-up text-sm"></i></span>
+              <span class="text-sm font-semibold text-slate-400">MARKET PULSE</span>
+              <span class="text-xs font-bold text-green-400 px-2 py-1 bg-green-500/10 rounded">LIVE</span>
             </div>
-            <div class="h-32 bg-slate-800/50 rounded-lg flex items-end justify-around p-4">
-              <div class="w-2 bg-gradient-to-t from-green-500 to-green-300" style="height: 40%"></div>
-              <div class="w-2 bg-gradient-to-t from-green-500 to-green-300" style="height: 60%"></div>
-              <div class="w-2 bg-gradient-to-t from-green-500 to-green-300" style="height: 35%"></div>
-              <div class="w-2 bg-gradient-to-t from-green-500 to-green-300" style="height: 70%"></div>
-              <div class="w-2 bg-gradient-to-t from-green-500 to-green-300" style="height: 50%"></div>
-              <div class="w-2 bg-gradient-to-t from-green-500 to-green-300" style="height: 65%"></div>
-            </div>
-            <div class="grid grid-cols-3 gap-2 text-xs">
-              <div class="bg-slate-800/50 p-3 rounded">
-                <div class="text-slate-400">Open</div>
-                <div class="font-semibold">24,200</div>
-              </div>
-              <div class="bg-slate-800/50 p-3 rounded">
-                <div class="text-slate-400">High</div>
-                <div class="font-semibold">24,920</div>
-              </div>
-              <div class="bg-slate-800/50 p-3 rounded">
-                <div class="text-slate-400">Low</div>
-                <div class="font-semibold">24,100</div>
+            <!-- Embedded Mini Chart -->
+            <div class="h-64 w-full rounded-lg overflow-hidden">
+              <div class="tradingview-widget-container" style="height:100%;width:100%">
+                <div class="tradingview-widget-container__widget" style="height:100%;width:100%"></div>
+                <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js" async>
+                {
+                "symbol": "BSE:SENSEX",
+                "width": "100%",
+                "height": "100%",
+                "locale": "in",
+                "dateRange": "1M",
+                "colorTheme": "dark",
+                "isTransparent": true,
+                "autosize": true,
+                "largeChartUrl": ""
+              }
+                </script>
               </div>
             </div>
           </div>
@@ -135,11 +141,7 @@
           </div>
           <div class="text-3xl font-bold mb-2">24,850</div>
           <div class="flex gap-4 text-sm">
-            <span class="text-green-400">+2.5% <i class="fas fa-arrow-up"></i></span>
-            <span class="text-slate-400">+615.25</span>
-          </div>
-          <div class="mt-4 pt-4 border-t border-slate-800 text-xs text-slate-400">
-            Last Updated: Just now
+            <span class="text-green-400">+2.5%</span>
           </div>
         </div>
 
@@ -151,11 +153,7 @@
           </div>
           <div class="text-3xl font-bold mb-2">51,420</div>
           <div class="flex gap-4 text-sm">
-            <span class="text-green-400">+1.8% <i class="fas fa-arrow-up"></i></span>
-            <span class="text-slate-400">+905.50</span>
-          </div>
-          <div class="mt-4 pt-4 border-t border-slate-800 text-xs text-slate-400">
-            Last Updated: Just now
+            <span class="text-green-400">+1.8%</span>
           </div>
         </div>
 
@@ -167,11 +165,7 @@
           </div>
           <div class="text-3xl font-bold mb-2">81,425</div>
           <div class="flex gap-4 text-sm">
-            <span class="text-green-400">+2.1% <i class="fas fa-arrow-up"></i></span>
-            <span class="text-slate-400">+1,680.50</span>
-          </div>
-          <div class="mt-4 pt-4 border-t border-slate-800 text-xs text-slate-400">
-            Last Updated: Just now
+            <span class="text-green-400">+2.1%</span>
           </div>
         </div>
 
@@ -183,11 +177,7 @@
           </div>
           <div class="text-3xl font-bold mb-2">$64,210</div>
           <div class="flex gap-4 text-sm">
-            <span class="text-red-400">-1.2% <i class="fas fa-arrow-down"></i></span>
-            <span class="text-slate-400">-$785.50</span>
-          </div>
-          <div class="mt-4 pt-4 border-t border-slate-800 text-xs text-slate-400">
-            Last Updated: Just now
+            <span class="text-red-400">-1.2%</span>
           </div>
         </div>
       </div>
@@ -209,138 +199,23 @@
             <i class="fas fa-chart-candlestick text-blue-400 text-xl"></i>
           </div>
           <h3 class="text-xl font-bold">Real-Time Charts</h3>
-          <p class="text-slate-400 text-sm">
-            Interactive candlestick charts with multiple timeframes and advanced technical indicators
-          </p>
+          <p class="text-slate-400 text-sm">Interactive candlestick charts with multiple timeframes and advanced technical indicators</p>
         </div>
-
         <!-- Feature 2 -->
         <div class="bg-slate-900 border border-slate-800 rounded-xl p-6 hover:border-blue-500/50 transition space-y-4">
           <div class="h-12 w-12 bg-blue-500/20 rounded-lg flex items-center justify-center">
             <i class="fas fa-brain text-blue-400 text-xl"></i>
           </div>
           <h3 class="text-xl font-bold">AI-Powered Analysis</h3>
-          <p class="text-slate-400 text-sm">
-            Machine learning algorithms analyze patterns and predict market movements
-          </p>
+          <p class="text-slate-400 text-sm">Machine learning algorithms analyze patterns and predict market movements</p>
         </div>
-
         <!-- Feature 3 -->
         <div class="bg-slate-900 border border-slate-800 rounded-xl p-6 hover:border-blue-500/50 transition space-y-4">
           <div class="h-12 w-12 bg-blue-500/20 rounded-lg flex items-center justify-center">
             <i class="fas fa-bell text-blue-400 text-xl"></i>
           </div>
           <h3 class="text-xl font-bold">Smart Alerts</h3>
-          <p class="text-slate-400 text-sm">
-            Customizable price alerts and technical signals delivered in real-time
-          </p>
-        </div>
-
-        <!-- Feature 4 -->
-        <div class="bg-slate-900 border border-slate-800 rounded-xl p-6 hover:border-blue-500/50 transition space-y-4">
-          <div class="h-12 w-12 bg-blue-500/20 rounded-lg flex items-center justify-center">
-            <i class="fas fa-briefcase text-blue-400 text-xl"></i>
-          </div>
-          <h3 class="text-xl font-bold">Portfolio Management</h3>
-          <p class="text-slate-400 text-sm">
-            Track and manage your investments with detailed performance analytics
-          </p>
-        </div>
-
-        <!-- Feature 5 -->
-        <div class="bg-slate-900 border border-slate-800 rounded-xl p-6 hover:border-blue-500/50 transition space-y-4">
-          <div class="h-12 w-12 bg-blue-500/20 rounded-lg flex items-center justify-center">
-            <i class="fas fa-graduation-cap text-blue-400 text-xl"></i>
-          </div>
-          <h3 class="text-xl font-bold">Trading Academy</h3>
-          <p class="text-slate-400 text-sm">
-            Learn from expert traders with comprehensive courses and tutorials
-          </p>
-        </div>
-
-        <!-- Feature 6 -->
-        <div class="bg-slate-900 border border-slate-800 rounded-xl p-6 hover:border-blue-500/50 transition space-y-4">
-          <div class="h-12 w-12 bg-blue-500/20 rounded-lg flex items-center justify-center">
-            <i class="fas fa-shield-alt text-blue-400 text-xl"></i>
-          </div>
-          <h3 class="text-xl font-bold">Bank-Level Security</h3>
-          <p class="text-slate-400 text-sm">
-            Enterprise-grade encryption and multi-factor authentication for your account
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Testimonials -->
-  <section class="py-20 px-4 sm:px-6 lg:px-8 bg-slate-900/50">
-    <div class="max-w-7xl mx-auto">
-      <h2 class="text-3xl font-bold mb-12 text-center">What Traders Say</h2>
-      <div class="grid md:grid-cols-3 gap-8">
-        <div class="bg-slate-900 border border-slate-800 rounded-xl p-6">
-          <div class="flex gap-1 mb-4">
-            <i class="fas fa-star text-yellow-400"></i>
-            <i class="fas fa-star text-yellow-400"></i>
-            <i class="fas fa-star text-yellow-400"></i>
-            <i class="fas fa-star text-yellow-400"></i>
-            <i class="fas fa-star text-yellow-400"></i>
-          </div>
-          <p class="text-slate-300 mb-4">
-            "The technical analysis tools are incredibly comprehensive. I've improved my trading accuracy significantly."
-          </p>
-          <div class="flex items-center gap-3">
-            <div class="h-10 w-10 bg-gradient-to-br from-blue-400 to-cyan-400 rounded-full flex items-center justify-center text-slate-900 font-bold">
-              RJ
-            </div>
-            <div>
-              <div class="font-semibold">Raj Joshi</div>
-              <div class="text-xs text-slate-400">Day Trader</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="bg-slate-900 border border-slate-800 rounded-xl p-6">
-          <div class="flex gap-1 mb-4">
-            <i class="fas fa-star text-yellow-400"></i>
-            <i class="fas fa-star text-yellow-400"></i>
-            <i class="fas fa-star text-yellow-400"></i>
-            <i class="fas fa-star text-yellow-400"></i>
-            <i class="fas fa-star text-yellow-400"></i>
-          </div>
-          <p class="text-slate-300 mb-4">
-            "The platform is user-friendly and the educational resources have transformed my approach to investing."
-          </p>
-          <div class="flex items-center gap-3">
-            <div class="h-10 w-10 bg-gradient-to-br from-green-400 to-emerald-400 rounded-full flex items-center justify-center text-slate-900 font-bold">
-              PM
-            </div>
-            <div>
-              <div class="font-semibold">Priya Mehta</div>
-              <div class="text-xs text-slate-400">Swing Trader</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="bg-slate-900 border border-slate-800 rounded-xl p-6">
-          <div class="flex gap-1 mb-4">
-            <i class="fas fa-star text-yellow-400"></i>
-            <i class="fas fa-star text-yellow-400"></i>
-            <i class="fas fa-star text-yellow-400"></i>
-            <i class="fas fa-star text-yellow-400"></i>
-            <i class="fas fa-star text-yellow-400"></i>
-          </div>
-          <p class="text-slate-300 mb-4">
-            "Excellent customer support and the AI alerts have saved me from several bad trades. Highly recommended!"
-          </p>
-          <div class="flex items-center gap-3">
-            <div class="h-10 w-10 bg-gradient-to-br from-purple-400 to-pink-400 rounded-full flex items-center justify-center text-slate-900 font-bold">
-              AK
-            </div>
-            <div>
-              <div class="font-semibold">Arjun Kumar</div>
-              <div class="text-xs text-slate-400">Long-term Investor</div>
-            </div>
-          </div>
+          <p class="text-slate-400 text-sm">Customizable price alerts and technical signals delivered in real-time</p>
         </div>
       </div>
     </div>
@@ -350,9 +225,7 @@
   <section class="py-20 px-4 sm:px-6 lg:px-8">
     <div class="max-w-7xl mx-auto">
       <h2 class="text-3xl font-bold mb-4 text-center">Simple, Transparent Pricing</h2>
-      <p class="text-center text-slate-400 mb-12 max-w-2xl mx-auto">
-        Choose the plan that fits your trading needs
-      </p>
+      <p class="text-center text-slate-400 mb-12 max-w-2xl mx-auto">Choose the plan that fits your trading needs</p>
       
       <div class="grid md:grid-cols-3 gap-8">
         <!-- Basic Plan -->
@@ -366,32 +239,14 @@
             <span class="text-slate-400 ml-2">/forever</span>
           </div>
           <ul class="space-y-3 text-sm">
-            <li class="flex items-center gap-2 text-slate-300">
-              <i class="fas fa-check text-green-400"></i> Real-time quotes
-            </li>
-            <li class="flex items-center gap-2 text-slate-300">
-              <i class="fas fa-check text-green-400"></i> Basic charts
-            </li>
-            <li class="flex items-center gap-2 text-slate-300">
-              <i class="fas fa-check text-green-400"></i> Watchlist (5 stocks)
-            </li>
-            <li class="flex items-center gap-2 text-slate-400">
-              <i class="fas fa-times text-red-400"></i> Advanced indicators
-            </li>
-            <li class="flex items-center gap-2 text-slate-400">
-              <i class="fas fa-times text-red-400"></i> AI signals
-            </li>
+            <li class="flex items-center gap-2 text-slate-300"><i class="fas fa-check text-green-400"></i> Real-time quotes</li>
+            <li class="flex items-center gap-2 text-slate-300"><i class="fas fa-check text-green-400"></i> Basic charts</li>
           </ul>
-          <button class="w-full py-2 border border-cyan-500 text-cyan-400 rounded-lg hover:bg-cyan-500/10 transition">
-            Get Started
-          </button>
         </div>
 
         <!-- Pro Plan -->
         <div class="bg-gradient-to-br from-blue-900/30 to-cyan-900/30 border-2 border-cyan-500 rounded-xl p-8 space-y-6 relative md:-translate-y-4">
-          <div class="absolute top-0 right-0 px-3 py-1 bg-cyan-500 text-slate-900 text-xs font-bold rounded-bl-lg">
-            POPULAR
-          </div>
+          <div class="absolute top-0 right-0 px-3 py-1 bg-cyan-500 text-slate-900 text-xs font-bold rounded-bl-lg">POPULAR</div>
           <div>
             <h3 class="text-2xl font-bold mb-2">Pro</h3>
             <div class="text-slate-400">For active traders</div>
@@ -401,25 +256,9 @@
             <span class="text-slate-400 ml-2">/month</span>
           </div>
           <ul class="space-y-3 text-sm">
-            <li class="flex items-center gap-2 text-slate-300">
-              <i class="fas fa-check text-green-400"></i> All Basic features
-            </li>
-            <li class="flex items-center gap-2 text-slate-300">
-              <i class="fas fa-check text-green-400"></i> Advanced indicators
-            </li>
-            <li class="flex items-center gap-2 text-slate-300">
-              <i class="fas fa-check text-green-400"></i> AI-powered signals
-            </li>
-            <li class="flex items-center gap-2 text-slate-300">
-              <i class="fas fa-check text-green-400"></i> Unlimited watchlists
-            </li>
-            <li class="flex items-center gap-2 text-slate-300">
-              <i class="fas fa-check text-green-400"></i> Priority support
-            </li>
+            <li class="flex items-center gap-2 text-slate-300"><i class="fas fa-check text-green-400"></i> Advanced indicators</li>
+            <li class="flex items-center gap-2 text-slate-300"><i class="fas fa-check text-green-400"></i> AI-powered signals</li>
           </ul>
-          <button class="w-full py-2 bg-gradient-to-r from-blue-500 to-cyan-500 text-white rounded-lg hover:shadow-lg hover:shadow-cyan-500/50 transition font-semibold">
-            Try Pro Free
-          </button>
         </div>
 
         <!-- Elite Plan -->
@@ -433,44 +272,10 @@
             <span class="text-slate-400 ml-2">/month</span>
           </div>
           <ul class="space-y-3 text-sm">
-            <li class="flex items-center gap-2 text-slate-300">
-              <i class="fas fa-check text-green-400"></i> All Pro features
-            </li>
-            <li class="flex items-center gap-2 text-slate-300">
-              <i class="fas fa-check text-green-400"></i> Portfolio analytics
-            </li>
-            <li class="flex items-center gap-2 text-slate-300">
-              <i class="fas fa-check text-green-400"></i> Risk calculator
-            </li>
-            <li class="flex items-center gap-2 text-slate-300">
-              <i class="fas fa-check text-green-400"></i> 1-on-1 trading mentor
-            </li>
-            <li class="flex items-center gap-2 text-slate-300">
-              <i class="fas fa-check text-green-400"></i> VIP support 24/7
-            </li>
+            <li class="flex items-center gap-2 text-slate-300"><i class="fas fa-check text-green-400"></i> Portfolio analytics</li>
+            <li class="flex items-center gap-2 text-slate-300"><i class="fas fa-check text-green-400"></i> 1-on-1 trading mentor</li>
           </ul>
-          <button class="w-full py-2 border border-cyan-500 text-cyan-400 rounded-lg hover:bg-cyan-500/10 transition">
-            Contact Sales
-          </button>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA Section -->
-  <section class="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-blue-900/30 to-cyan-900/30">
-    <div class="max-w-4xl mx-auto text-center space-y-6">
-      <h2 class="text-4xl font-bold">Start Your Trading Journey Today</h2>
-      <p class="text-xl text-slate-400">
-        Join thousands of successful traders using StockMarketInsights
-      </p>
-      <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="pages/signup.html" class="px-8 py-3 bg-gradient-to-r from-blue-500 to-cyan-500 text-white rounded-lg hover:shadow-lg hover:shadow-blue-500/50 transition font-semibold">
-          Create Free Account
-        </a>
-        <a href="pages/education.html" class="px-8 py-3 border border-cyan-500 text-cyan-400 rounded-lg hover:bg-cyan-500/10 transition font-semibold">
-          Explore Academy
-        </a>
       </div>
     </div>
   </section>
@@ -478,66 +283,11 @@
   <!-- Footer -->
   <footer class="bg-slate-900/50 border-t border-slate-800 py-12 px-4 sm:px-6 lg:px-8">
     <div class="max-w-7xl mx-auto">
-      <div class="grid md:grid-cols-4 gap-8 mb-8">
-        <div>
-          <div class="flex items-center gap-2 mb-4">
-            <div class="h-8 w-8 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center">
-              <i class="fas fa-chart-line text-white font-bold"></i>
-            </div>
-            <span class="font-bold text-white">StockMarketInsights</span>
-          </div>
-          <p class="text-sm text-slate-400">Professional trading platform for modern investors</p>
-        </div>
-
-        <div>
-          <h4 class="font-semibold mb-4">Platform</h4>
-          <ul class="space-y-2 text-sm text-slate-400">
-            <li><a href="#" class="hover:text-cyan-400 transition">Dashboard</a></li>
-            <li><a href="#" class="hover:text-cyan-400 transition">Markets</a></li>
-            <li><a href="#" class="hover:text-cyan-400 transition">Watchlist</a></li>
-            <li><a href="#" class="hover:text-cyan-400 transition">Portfolio</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <h4 class="font-semibold mb-4">Education</h4>
-          <ul class="space-y-2 text-sm text-slate-400">
-            <li><a href="#" class="hover:text-cyan-400 transition">Courses</a></li>
-            <li><a href="#" class="hover:text-cyan-400 transition">Blog</a></li>
-            <li><a href="#" class="hover:text-cyan-400 transition">Tutorials</a></li>
-            <li><a href="#" class="hover:text-cyan-400 transition">Webinars</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <h4 class="font-semibold mb-4">Legal</h4>
-          <ul class="space-y-2 text-sm text-slate-400">
-            <li><a href="#" class="hover:text-cyan-400 transition">Terms of Service</a></li>
-            <li><a href="#" class="hover:text-cyan-400 transition">Privacy Policy</a></li>
-            <li><a href="#" class="hover:text-cyan-400 transition">Disclaimer</a></li>
-            <li><a href="#" class="hover:text-cyan-400 transition">Contact Us</a></li>
-          </ul>
-        </div>
-      </div>
-
       <div class="border-t border-slate-800 pt-8 flex flex-col sm:flex-row justify-between items-center">
-        <p class="text-sm text-slate-400">© 2024 StockMarketInsights. All rights reserved.</p>
-        <div class="flex gap-4 mt-4 sm:mt-0">
-          <a href="#" class="text-slate-400 hover:text-cyan-400 transition"><i class="fab fa-twitter"></i></a>
-          <a href="#" class="text-slate-400 hover:text-cyan-400 transition"><i class="fab fa-linkedin"></i></a>
-          <a href="#" class="text-slate-400 hover:text-cyan-400 transition"><i class="fab fa-instagram"></i></a>
-          <a href="#" class="text-slate-400 hover:text-cyan-400 transition"><i class="fab fa-facebook"></i></a>
-        </div>
+        <p class="text-sm text-slate-400">© 2026 StockMarketInsights. All rights reserved.</p>
       </div>
     </div>
   </footer>
-
-  <!-- Risk Disclaimer -->
-  <div class="bg-slate-900 border-t border-slate-800 py-4 px-4 sm:px-6 lg:px-8 text-center text-xs text-slate-500">
-    <p>
-      <strong>Disclaimer:</strong> This platform is for informational and educational purposes only. Trading and investing involve substantial risk of loss. Past performance is not indicative of future results. Always conduct thorough research and consult with a qualified financial advisor before making investment decisions.
-    </p>
-  </div>
 
 </body>
 </html>
